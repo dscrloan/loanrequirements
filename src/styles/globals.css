@@ -126,6 +126,14 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Prevent layout shifts */
+    min-height: 100vh;
+    font-display: swap;
+  }
+  
+  /* Critical styles for faster rendering */
+  .container {
+    contain: layout style;
   }
 }
 

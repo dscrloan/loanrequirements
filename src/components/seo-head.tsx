@@ -30,6 +30,8 @@ export function SEOHead({ pageData }: SEOHeadProps) {
       
       {/* Performance optimizations */}
       <meta httpEquiv="x-dns-prefetch-control" content="on" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//www.shopdscrloans.com" />
       
       {/* Open Graph tags */}
       <meta property="og:title" content={pageData.title} />
@@ -48,9 +50,10 @@ export function SEOHead({ pageData }: SEOHeadProps) {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#030213" />
       
-      {/* Structured Data */}
+      {/* Structured Data - defer loading */}
       <script
         type="application/ld+json"
+        defer
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
         }}

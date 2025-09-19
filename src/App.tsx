@@ -17,6 +17,13 @@ export default function App() {
   useEffect(() => {
     // Parse current route
     const currentPath = window.location.pathname;
+    
+    // Handle robots.txt - serve static file
+    if (currentPath === '/robots.txt') {
+      window.location.href = '/robots.txt';
+      return;
+    }
+    
     let data: PageData;
     
     // Handle XML sitemap
@@ -154,7 +161,10 @@ export default function App() {
           
           setPageData(newData);
           document.title = newData.title;
-          window.scrollTo(0, 0);
+          // Use requestAnimationFrame to prevent forced reflow
+          requestAnimationFrame(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          });
         }
       }
     };

@@ -183,19 +183,19 @@ export function StatePage({ pageData }: StatePageProps) {
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-medium mb-1">Credit Score</h4>
+                  <h3 className="font-medium mb-1">Credit Score</h3>
                   <p className="text-sm text-muted-foreground">
                     Minimum 620-640 FICO score, though 680+ gets better rates and terms.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Down Payment</h4>
+                  <h3 className="font-medium mb-1">Down Payment</h3>
                   <p className="text-sm text-muted-foreground">
                     20-25% minimum down payment, with better rates available at 25%+.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Reserves</h4>
+                  <h3 className="font-medium mb-1">Reserves</h3>
                   <p className="text-sm text-muted-foreground">
                     2-6 months of mortgage payments in reserves, varies by loan amount.
                   </p>
@@ -214,19 +214,19 @@ export function StatePage({ pageData }: StatePageProps) {
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-medium mb-1">Minimum DSCR</h4>
+                  <h3 className="font-medium mb-1">Minimum DSCR</h3>
                   <p className="text-sm text-muted-foreground">
                     1.0 minimum ratio, though 1.2+ provides access to better rates.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Income Calculation</h4>
+                  <h3 className="font-medium mb-1">Income Calculation</h3>
                   <p className="text-sm text-muted-foreground">
                     Based on market rent analysis or existing lease agreements.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Property Types</h4>
+                  <h3 className="font-medium mb-1">Property Types</h3>
                   <p className="text-sm text-muted-foreground">
                     Single-family, condo, townhome, and 2-4 unit properties qualify.
                   </p>
