@@ -17,7 +17,7 @@ export function CTASection({
   return (
     <Card className={`bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20 ${className}`}>
       <CardContent className="p-8 text-center">
-        <h3 className="mb-4">{title}</h3>
+        <h2 className="mb-4">{title}</h2>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
           {description}
         </p>

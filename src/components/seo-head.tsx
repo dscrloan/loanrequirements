@@ -29,8 +29,6 @@ export function SEOHead({ pageData }: SEOHeadProps) {
       <link rel="canonical" href={pageData.canonical} />
       
       {/* Performance optimizations */}
-      <link rel="preconnect" href="https://images.unsplash.com" />
-      <link rel="dns-prefetch" href="https://www.shopdscrloans.com" />
       <meta httpEquiv="x-dns-prefetch-control" content="on" />
       
       {/* Open Graph tags */}

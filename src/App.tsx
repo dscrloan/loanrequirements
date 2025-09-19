@@ -9,6 +9,7 @@ import { StatePage } from './components/pages/state-page';
 import { CityPage } from './components/pages/city-page';
 import { TopicPage } from './components/pages/topic-page';
 import { SitemapPage } from './components/pages/sitemap-page';
+import { XMLSitemap } from './components/xml-sitemap';
 
 export default function App() {
   const [pageData, setPageData] = useState<PageData | null>(null);
@@ -18,8 +19,20 @@ export default function App() {
     const currentPath = window.location.pathname;
     let data: PageData;
     
+    // Handle XML sitemap
+    if (currentPath === '/sitemap.xml') {
+      data = {
+        title: 'XML Sitemap',
+        metaDescription: 'XML Sitemap for DSCR Loan Requirements',
+        h1: 'XML Sitemap',
+        canonical: 'https://dscrloanrequirements.com/sitemap.xml',
+        breadcrumbs: [],
+        type: 'xml-sitemap' as const,
+        params: {}
+      };
+    } 
     // Handle sitemap page
-    if (currentPath === '/sitemap') {
+    else if (currentPath === '/sitemap') {
       data = {
         title: 'DSCR Loan Requirements - Complete Site Map',
         metaDescription: 'Complete sitemap of all DSCR loan requirements, rates, and lender information pages. Find investment property financing info by state and city.',
@@ -64,7 +77,17 @@ export default function App() {
       const newPath = window.location.pathname;
       let newData: PageData;
       
-      if (newPath === '/sitemap') {
+      if (newPath === '/sitemap.xml') {
+        newData = {
+          title: 'XML Sitemap',
+          metaDescription: 'XML Sitemap for DSCR Loan Requirements',
+          h1: 'XML Sitemap',
+          canonical: 'https://dscrloanrequirements.com/sitemap.xml',
+          breadcrumbs: [],
+          type: 'xml-sitemap' as const,
+          params: {}
+        };
+      } else if (newPath === '/sitemap') {
         newData = {
           title: 'DSCR Loan Requirements - Complete Site Map',
           metaDescription: 'Complete sitemap of all DSCR loan requirements, rates, and lender information pages. Find investment property financing info by state and city.',
@@ -102,7 +125,17 @@ export default function App() {
           window.history.pushState({}, '', href);
           
           let newData: PageData;
-          if (href === '/sitemap') {
+          if (href === '/sitemap.xml') {
+        newData = {
+          title: 'XML Sitemap',
+          metaDescription: 'XML Sitemap for DSCR Loan Requirements',
+          h1: 'XML Sitemap',
+          canonical: 'https://dscrloanrequirements.com/sitemap.xml',
+          breadcrumbs: [],
+          type: 'xml-sitemap' as const,
+          params: {}
+        };
+      } else if (href === '/sitemap') {
             newData = {
               title: 'DSCR Loan Requirements - Complete Site Map',
               metaDescription: 'Complete sitemap of all DSCR loan requirements, rates, and lender information pages. Find investment property financing info by state and city.',
@@ -146,6 +179,8 @@ export default function App() {
         return <TopicPage pageData={pageData} />;
       case 'sitemap':
         return <SitemapPage />;
+      case 'xml-sitemap':
+        return <XMLSitemap />;
       default:
         return <HomePage />;
     }

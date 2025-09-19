@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://dscrloanrequirements.com/sitemap.xml
+Sitemap: https://dscrloanrequirements.com/sitemap
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all pages for SEO
+Allow: /states/
+Allow: /sitemap

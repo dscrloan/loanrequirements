@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { CTASection } from '../cta-section';
 import { FAQSection } from '../faq-section';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Calculator, FileText, TrendingUp, Shield, Clock, CheckCircle } from 'lucide-react';
 
 export function HomePage() {
@@ -14,7 +13,7 @@ export function HomePage() {
       description: "Calculate your debt service coverage ratio to determine loan eligibility"
     },
     {
-      icon: <FileText className="h-6 w-6 text-green-600" />,
+      icon: <FileText className="h-6 w-6 text-green-700" />,
       title: "Requirements Guide",
       description: "Complete breakdown of DSCR loan requirements by state and lender"
     },
@@ -66,51 +65,36 @@ export function HomePage() {
     <div className="space-y-12">
       {/* Hero Section */}
       <section className="relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <Badge variant="secondary" className="mb-4">Investment Property Financing</Badge>
-              <h1>DSCR Loan Requirements: Your Complete Guide to Investment Property Financing</h1>
-              <p className="text-lg text-muted-foreground">
-                Get qualified for DSCR loans with no income verification. Our comprehensive guide covers requirements, rates, and connects you with top lenders nationwide.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <span>No income docs required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <span>Rates from 6.5%</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <span>Up to 80% LTV</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <span>Fast 30-day closing</span>
-              </div>
-            </div>
-
-            <CTASection 
-              title="Get Your DSCR Loan Quote"
-              description="Connect with experienced DSCR loan specialists and get pre-qualified in minutes."
-              className="text-left"
-            />
-          </div>
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <Badge variant="secondary" className="mb-4">Investment Property Financing</Badge>
+          <h1>DSCR Loan Requirements: Your Complete Guide to Investment Property Financing</h1>
+          <p className="text-lg text-muted-foreground">
+            Get qualified for DSCR loans with no income verification. Our comprehensive guide covers requirements, rates, and connects you with top lenders nationwide.
+          </p>
           
-          <div className="relative">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1572605552596-0e5ac3b31dd7?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMGZpbmFuY2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NTgyNDAzMTN8MA&ixlib=rb-4.1.0&q=85&w=850"
-              alt="Modern city skyline representing investment property markets"
-              className="rounded-lg shadow-lg"
-              loading="eager"
-              fetchPriority="high"
-            />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm max-w-2xl mx-auto">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-700" />
+              <span>No income docs required</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-700" />
+              <span>Rates from 6.5%</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-700" />
+              <span>Up to 80% LTV</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-700" />
+              <span>Fast 30-day closing</span>
+            </div>
           </div>
+
+          <CTASection 
+            title="Get Your DSCR Loan Quote"
+            description="Connect with experienced DSCR loan specialists and get pre-qualified in minutes."
+          />
         </div>
       </section>
 
@@ -161,7 +145,7 @@ export function HomePage() {
               <div className="grid gap-2">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-green-700 flex-shrink-0" />
                     <span className="text-sm">{benefit}</span>
                   </div>
                 ))}
@@ -189,7 +173,7 @@ export function HomePage() {
                 <div className="border-t pt-2">
                   <div className="flex justify-between">
                     <span className="font-medium">DSCR Ratio:</span>
-                    <span className="font-bold text-green-600">1.25</span>
+                    <span className="font-bold text-green-700">1.25</span>
                   </div>
                 </div>
               </div>
@@ -214,23 +198,23 @@ export function HomePage() {
             <CardContent className="space-y-4">
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Minimum credit score of 620-640 (varies by lender)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">2-6 months of mortgage reserves required</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Down payment of 20-25% minimum</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Property must be investment/rental property</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">No employment verification required</span>
                 </li>
               </ul>
@@ -244,23 +228,23 @@ export function HomePage() {
             <CardContent className="space-y-4">
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Single-family homes, condos, townhomes</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">2-4 unit multifamily properties</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Minimum DSCR of 1.0 (preferably 1.2+)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Professional appraisal required</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-700 mt-0.5 flex-shrink-0" />
                   <span className="text-sm">Market rent analysis for income verification</span>
                 </li>
               </ul>
