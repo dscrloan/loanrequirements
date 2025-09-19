@@ -1,18 +1,89 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
 import { STATES, CITIES, TOPICS } from '../../utils/router';
-import { MapPin, Building, Calculator, Home } from 'lucide-react';
+import { generateSitemapXML, getSitemapStats } from '../../utils/sitemap-generator';
+import { MapPin, Building, Calculator, Home, Download, Globe, FileText } from 'lucide-react';
 
 export function SitemapPage() {
+  const stats = getSitemapStats();
+
+  const downloadSitemap = () => {
+    const xml = generateSitemapXML();
+    const blob = new Blob([xml], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sitemap.xml';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-12">
       {/* Header */}
-      <section className="space-y-4">
-        <h1>DSCR Loan Requirements - Site Map</h1>
-        <p className="text-lg text-muted-foreground">
-          Complete directory of all DSCR loan information pages on our site. Find requirements, rates, 
-          and lenders for investment properties across the United States.
-        </p>
+      <section className="space-y-6">
+        <div className="space-y-4">
+          <h1>DSCR Loan Requirements - Site Map</h1>
+          <p className="text-lg text-muted-foreground">
+            Complete directory of all DSCR loan information pages on our site. Find requirements, rates, 
+            and lenders for investment properties across the United States.
+          </p>
+        </div>
+        
+        {/* Sitemap Stats and Download */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Globe className="h-5 w-5" />
+                Sitemap Statistics
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">Total Pages:</span>
+                <Badge variant="secondary">{stats.totalUrls}</Badge>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">State Pages:</span>
+                <Badge variant="outline">{stats.statePages}</Badge>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">City Pages:</span>
+                <Badge variant="outline">{stats.cityPages}</Badge>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">Topic Pages:</span>
+                <Badge variant="outline">{stats.topicPages}</Badge>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="h-5 w-5" />
+                XML Sitemap
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                Download the XML sitemap for Google Search Console submission.
+              </p>
+              <Button onClick={downloadSitemap} className="w-full">
+                <Download className="h-4 w-4 mr-2" />
+                Download sitemap.xml
+              </Button>
+              <div className="text-xs text-muted-foreground">
+                Last updated: {new Date().toLocaleDateString()}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       {/* Home */}

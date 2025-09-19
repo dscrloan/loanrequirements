@@ -27,15 +27,30 @@ export function SEOHead({ pageData }: SEOHeadProps) {
       <title>{pageData.title}</title>
       <meta name="description" content={pageData.metaDescription} />
       <link rel="canonical" href={pageData.canonical} />
+      
+      {/* Performance optimizations */}
+      <link rel="preconnect" href="https://images.unsplash.com" />
+      <link rel="dns-prefetch" href="https://www.shopdscrloans.com" />
+      <meta httpEquiv="x-dns-prefetch-control" content="on" />
+      
+      {/* Open Graph tags */}
       <meta property="og:title" content={pageData.title} />
       <meta property="og:description" content={pageData.metaDescription} />
       <meta property="og:url" content={pageData.canonical} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="DSCR Loan Requirements" />
+      
+      {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageData.title} />
       <meta name="twitter:description" content={pageData.metaDescription} />
-      <meta name="robots" content="index, follow" />
+      
+      {/* SEO and indexing */}
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="theme-color" content="#030213" />
+      
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

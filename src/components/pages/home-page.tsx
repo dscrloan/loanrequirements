@@ -104,10 +104,11 @@ export function HomePage() {
           
           <div className="relative">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1572605552596-0e5ac3b31dd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMGZpbmFuY2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NTgyNDAzMTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://images.unsplash.com/photo-1572605552596-0e5ac3b31dd7?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMGZpbmFuY2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NTgyNDAzMTN8MA&ixlib=rb-4.1.0&q=85&w=850"
               alt="Modern city skyline representing investment property markets"
               className="rounded-lg shadow-lg"
               loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>
